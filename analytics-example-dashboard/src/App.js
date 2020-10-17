@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MyLineChart from "./components/MyLineChart";
-import  metricChartDateParser  from './dateParser';
+import metricChartDateParser from "./dateParser";
 import "./App.css";
 
 const TTFB = "ttfb";
@@ -25,7 +25,6 @@ const App = () => {
         .then((data) => {
           data = data.map((item) => {
             item.created_at = metricChartDateParser(item.created_at);
-            console.log('item.created_at', item);
             return item;
           });
           switch (type) {
@@ -44,6 +43,9 @@ const App = () => {
             default:
               break;
           }
+        })
+        .catch((err) => {
+          console.log("error", err);
         });
     };
 
@@ -53,17 +55,22 @@ const App = () => {
     getAnalytics(WINDOW_LOAD);
   }, []);
 
-  console.log("TTFBData", TTFBData);
-  console.log("FCPData", FCPData);
-  console.log("domLoadData", domLoadData);
-  console.log("windowLoadData", windowLoadData);
+  const chartStyles = {
+    display: "flex",
+    flexWrap: "wrap",
+    padding: "10px",
+  };
+
+console.log('deneme');
 
   return (
     <div className="App">
-      <MyLineChart data={TTFBData} />
-      <MyLineChart data={FCPData} />
-      <MyLineChart data={domLoadData} />
-      <MyLineChart data={windowLoadData} />
+      <div className="chart-container" style={chartStyles}>
+        <MyLineChart width={400} width={500} data={TTFBData} />
+        <MyLineChart width={400} width={500} data={FCPData} />
+        <MyLineChart width={400} width={500} data={domLoadData} />
+        <MyLineChart width={400} width={500} data={windowLoadData} />
+      </div>
     </div>
   );
 };

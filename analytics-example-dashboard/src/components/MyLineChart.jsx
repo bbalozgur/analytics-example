@@ -1,12 +1,12 @@
 import React from "react";
 import { LineChart, XAxis, Tooltip, CartesianGrid, Line, YAxis} from 'recharts';
 
-const MyLineChart = ({ data }) => {
+const MyLineChart = ({ data, width, heihgt }) => {
   if (!data) return <div>data yok</div>
   return (
     <LineChart
-      width={400}
-      height={400}
+      width={width}
+      height={heihgt}
       data={data}
       margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
     >

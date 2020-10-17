@@ -35,7 +35,6 @@ class PerformanceAnalytics {
       },
       body: JSON.stringify(requestBody),
     });
-    console.log("send metric", type, value);
   }
 
   getTTFB() {
