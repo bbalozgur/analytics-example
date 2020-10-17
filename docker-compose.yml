@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  mongo:
+    image: 'mongo'
+    container_name: "mongodb"
+    environment:
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_LOG_DIR=/dev/null
+    ports:
+    - "27017:27017"
+  api:
+    build: './analytics-example-api'
+    ports:
+    - "4000:4000"
+    depends_on:
+      - mongo
+  js:
+    build: './analytics-example-js'
+    ports:
+    - "5000:5000"
+  dashboard:
+    tty: true
+    build: './analytics-example-dashboard'
+    ports:
+    - "3000:3000"
