@@ -64,10 +64,10 @@ const App = () => {
   return (
     <div className="App">
       <div className="chart-container" style={chartStyles}>
-        <MyLineChart width={400} width={500} data={TTFBData} />
-        <MyLineChart width={400} width={500} data={FCPData} />
-        <MyLineChart width={400} width={500} data={domLoadData} />
-        <MyLineChart width={400} width={500} data={windowLoadData} />
+        <MyLineChart width={400} height={500} data={TTFBData} />
+        <MyLineChart width={400} height={500} data={FCPData} />
+        <MyLineChart width={400} height={500} data={domLoadData} />
+        <MyLineChart width={400} height={500} data={windowLoadData} />
       </div>
     </div>
   );
