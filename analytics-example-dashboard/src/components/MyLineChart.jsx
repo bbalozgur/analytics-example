@@ -2,7 +2,7 @@ import React from "react";
 import { LineChart, XAxis, Tooltip, CartesianGrid, Line, YAxis} from 'recharts';
 
 const MyLineChart = ({ data, width, height }) => {
-  if (!data) return <div>data yok</div>
+  if (!data || data.length === 0) return <div>data yok</div>
   return (
     <LineChart
       width={width}
