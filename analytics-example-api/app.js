@@ -16,7 +16,7 @@ app.use(cookieParser());
 
 app.use("/", indexRouter);
 
-const dbPath = `mongodb://${process.env.DB_HOST || 'localhost'}:27017`
+const dbPath = `mongodb://${process.env.DB_HOST || 'localhost'}:27017/analytics`
 const options = { useNewUrlParser: true, useUnifiedTopology: true };
 const mongo = mongoose.connect(dbPath, options);
 
