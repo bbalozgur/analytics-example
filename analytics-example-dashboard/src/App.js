@@ -61,8 +61,6 @@ const App = () => {
     padding: "10px",
   };
 
-console.log('deneme');
-
   return (
     <div className="App">
       <div className="chart-container" style={chartStyles}>
