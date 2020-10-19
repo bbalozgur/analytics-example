@@ -1,23 +1,23 @@
-Analytics Example
+# Analytics Example
 
 The project includes three projects.
 
-installation
+# installation
 
 docker-compose up
 
-if you make changes in the projects
+# if you make changes in the projects
 
 docker-compose up --build
 
-Analytics Example Api
+# Analytics Example Api
 
 Project runnig on 4000 port
 
-Analytics Example Dashboard
+# Analytics Example Dashboard
 
 Project runnig on 3000 port
 
-Analytics Example js
+# Analytics Example js
 
 Project runnig on 5000 port
